@@ -18,6 +18,7 @@ namespace WpfApp1
         //Dont change what you dont understand
     public partial class MainWindow : Window
     {
+        private string favouriteTopic = "";
         private ChatMemory memory = new ChatMemory();
 
         private Random random = new Random();
