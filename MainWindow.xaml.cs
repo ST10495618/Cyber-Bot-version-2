@@ -201,6 +201,24 @@ namespace WpfApp1
 
                 string lower =
                     message.ToLower();
+
+                     // SAVE FAVOURITE TOPIC USING "INTERESTED IN"
+ if (lower.Contains("interested in"))
+ {
+     string[] parts =
+         lower.Split(new string[] { "interested in" },
+         StringSplitOptions.None);
+
+     if (parts.Length > 1)
+     {
+         favouriteTopic = parts[1].Trim();
+
+         AddBotMessage("Great! I will remember that you are interested in "
+             + favouriteTopic);
+
+         return;
+     }
+ }
                 // EXIT COMMAND
                 if (lower.Contains("bye") ||
                     lower.Contains("exit") ||
