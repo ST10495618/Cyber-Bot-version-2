@@ -290,7 +290,15 @@ namespace WpfApp1
                             var responses = cyberResponses[keyword];
 
                  string randomResponse = responses[random.Next(responses.Count)];
-                      AddBotMessage(randomResponse);
+                      if (!string.IsNullOrEmpty(favouriteTopic))
+{
+    AddBotMessage("Since you are interested in " +
+        favouriteTopic + ", " + randomResponse);
+}
+else
+{
+    AddBotMessage(randomResponse);
+}
 
                             found = true;
 
