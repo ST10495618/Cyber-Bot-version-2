@@ -15,7 +15,7 @@ using System.Windows.Threading;
 
 namespace WpfApp1
 {
-        //Dont change what you dont understand
+       
     public partial class MainWindow : Window
     {
         private string favouriteTopic = "";
@@ -32,8 +32,8 @@ namespace WpfApp1
             Brushes.DarkRed,
             Brushes.MidnightBlue
         };
-        //Instead of dictionary, altinatively you can use generic list.List are dynamic
-        // CYBERSECURITY RESPONSES, Add RESPONSES THAT ALIGN TO YOUR TASK
+        // dictionary
+        // CYBERSECURITY RESPONSES
         private Dictionary<string, List<string>> cyberResponses =
             new Dictionary<string, List<string>>()
         {
@@ -146,7 +146,7 @@ namespace WpfApp1
 
 
       
-        // The background color I requested,somehow I dont think its necessary. 
+        // The background color 
         private void StartBackgroundAnimation()
         {
             DispatcherTimer timer =new DispatcherTimer();
@@ -161,7 +161,7 @@ namespace WpfApp1
             timer.Start();
         }
 
-        // Please add your voice. I no longer wants the VS sound.
+        // INTRO VOICE
         private void PlayGreeting()
         {
             try
@@ -451,7 +451,7 @@ else
             ChatPanel.Children.Add(stack);
         }
 
-        // TYPING EFFECT Leave it as it
+        // TYPING EFFECT 
         private async Task TypingAnimation()
         {
             Border typingBorder =new Border()
