@@ -254,26 +254,38 @@ namespace WpfApp1
                 }
 
                 // Emotions
+              
                 else if (lower.Contains("sad"))
                 {
-                    AddBotMessage("I'm sorry you're sad ");
+                    AddBotMessage("I'm sorry you're sad. " +
+                        GetRandomCyberResponse());
                 }
 
                 else if (lower.Contains("happy"))
                 {
-                    AddBotMessage("That's amazing ");
+                    AddBotMessage("That's amazing! " +
+                        GetRandomCyberResponse());
                 }
+
                 else if (lower.Contains("worried"))
                 {
-                    AddBotMessage("Do not worry.  ");
+                    AddBotMessage("Do not worry. " +
+                        GetRandomCyberResponse());
                 }
+
                 else if (lower.Contains("frustrated"))
                 {
-                    AddBotMessage("I understand this can be frustrating.");
+                    AddBotMessage("I understand this can be frustrating. " +
+                        GetRandomCyberResponse());
                 }
-                else if (lower.Contains("tell me more") ||lower.Contains("another tip") ||lower.Contains("explain more"))
+
+                else if (lower.Contains("tell me more") ||
+                         lower.Contains("another tip") ||
+                         lower.Contains("explain more"))
                 {
                     HandleFollowUp();
+
+
                 }
 
                 // KEYWORD DETECTION
@@ -335,6 +347,18 @@ else
                 AddBotMessage("Please ask about a topic first ");
             }
         }
+        private string GetRandomCyberResponse()
+{
+    List<string> allResponses =
+        new List<string>();
+
+    foreach (var topic in cyberResponses.Values)
+    {
+        allResponses.AddRange(topic);
+    }
+
+    return allResponses[random.Next(allResponses.Count)];
+}
 
         // BOT MESSAGE
         private void AddBotMessage(
